@@ -15,14 +15,14 @@ public class BalancedBrackets {
                 if(balanceBracket.isEmpty()){
                     return "No";
                 }
-            }
-            //checks if brackets are paired, by comparing the char that has been popped from the stack
-            //to current remaining bracket not yet added to stack
-            char bracketTop = balanceBracket.pop();
-            if((bracket == '}' && bracketTop != '{') ||
-                    (bracket == ']' && bracketTop != '[') ||
-                    (bracket == ')' && bracketTop != '(')){
-                return "No";
+                //checks if brackets are paired, by comparing the char that has been popped from the stack
+                //to current remaining bracket not yet added to stack
+                char bracketTop = balanceBracket.pop();
+                if((bracket == '}' && bracketTop != '{') ||
+                        (bracket == ']' && bracketTop != '[') ||
+                        (bracket == ')' && bracketTop != '(')){
+                    return "No";
+                }
             }
         }
         //if stack is empty, considered balanced
@@ -30,7 +30,7 @@ public class BalancedBrackets {
     }
 
     public static void main(String[] args) {
-        String s = "{[()]}";
+        String s = "{[()]]}";
         System.out.println(isBalanced(s));
     }
 }
